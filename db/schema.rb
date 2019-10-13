@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_10_12_190847) do
   enable_extension "plpgsql"
 
   create_table "campaigns", force: :cascade do |t|
-    t.string "titile"
+    t.string "title"
     t.text "description_short"
     t.text "description_full"
     t.decimal "goal"

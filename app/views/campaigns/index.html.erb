@@ -1,1 +1,12 @@
-<h1>Campaigns</h1>
+<% @campaigns.each do |campaign| %>
+  <div>
+    <h1><%= campaign.title %></h1>
+    <strong><%= campaign.description_short %></strong>
+    <p><%= campaign.description_full %></p>
+    <strong><%=campaign.goal %></strong>
+    <br />
+    <strong><%= campaign.raised %></strong>
+  </div>
+
+  <hr />
+  <% end %>
