@@ -1,0 +1,10 @@
+<h1>New Campaign</h1>
+
+<%= simple_form_for @campaign do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description_short %>
+  <%= f.input :description_full %>
+  <%= f.input :goal %>
+  <%= f.input :raised %> 
+  <%= f.submit "Submit" %>
+<% end %>
