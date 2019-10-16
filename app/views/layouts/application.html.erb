@@ -15,7 +15,7 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">DonateOneDollar</a>
+      <%= link_to 'DonateOneDollar','#', class: 'navbar-brand' %>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-md-0">
@@ -35,7 +35,10 @@
               <%= link_to 'Our Campaigns','#', class: 'nav-link' %> 
             </li>
             <li class="nav-item">
-              <%= link_to 'Contact Us','#', class: 'nav-link' %> 
+              <%= link_to 'Contact Us',  new_contact_path, class: 'nav-link' %> 
+            </li>
+            <li class="nav-item float-right">
+              <%= link_to 'New','#', class: 'nav-link float-right '  %> 
             </li>
           </ul>
         </div>

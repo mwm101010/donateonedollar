@@ -1,0 +1,60 @@
+<div class="top-box">
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="frosty col-10 offset-1 text-center">
+    <h1>Contact US</h1>
+  </div>
+</div>
+
+<br />
+<br />
+<div class="short-des col-10 offset-1 text-center">
+  <h3>We love to hear from beautiful people like you who can feel others sorrows, We believe that's what made you different from others.</h3>
+</div>
+
+<br />
+<br />
+ <style>
+    html, body {
+      height: 60%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 100%;
+    }
+  </style>
+ 
+  <div id="map"></div>
+  <script>
+
+    function initMap() {
+      var myLatLng = {lat: 32.852370, lng: -96.761290};
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 7,
+        center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+      });
+    }
+  </script>
+
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRaO7GqD4PttoZqNHYy_KBm6uY6PgWhY8&callback=initMap">
+  </script>
+
+  <div id="map"></div>
+
+  <br />
+  <br />
+  <br />
+
