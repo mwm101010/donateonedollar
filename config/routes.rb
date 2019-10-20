@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :campaigns, only: [:new, :create]
   resources :contacts, only: [:new, :create]
   resources :donates, only: [:new, :create]
+  resources :pages, only: :index
 end
