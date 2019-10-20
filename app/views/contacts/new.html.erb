@@ -29,7 +29,7 @@
     }
   </style>
  
-  <div id="map"></div>
+  
   <script>
 
     function initMap() {
@@ -57,4 +57,77 @@
   <br />
   <br />
   <br />
-
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md">
+        <h2 >Address</h2>
+        <br/>
+        <ul>
+          <li>
+            <div class="icon-box">
+              <div class="inner">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="content-box">
+                <h4> Address</h4>
+                <p>
+                  6060 Village Bend Dr
+                  <br />
+                  Dallas, Tx, 75206
+                </p>
+              </div>
+            </li>
+            <li>
+            <div class="icon-box">
+              <div class="inner">
+                <i class="fas fa-phone-square-alt"></i>
+              </div>
+              <div class="content-box">
+                <h4> Phone</h4>
+                <p>
+                  Office: 936 668 9805
+                  <br />
+                  Mobile: 936 668 9805
+                </p>
+              </div>
+            </li>
+            <li>
+            <div class="icon-box">
+              <div class="inner">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="content-box">
+                <h4> Email</h4>
+                <p>
+                  donateonedollar@gmail.com
+                  <br />
+                  donateonedollar@gmail.com
+                </p>
+              </div>
+            </li>
+        </ul>
+      </div>
+      <div class="col-sm-8">
+        <div class="txt-container">
+          <div>
+            <h2>Contact Form</h2>
+          </div>
+              <form>
+                <div class="row">
+                  <div class="col-md-6"> 
+                    <%= simple_form_for @contacts do |f| %>
+                      <%= f.input :name, placeholder: "Full Name" %>
+                      <%= f.input :email, placeholder: "Email" %>
+                      <%= f.input :phone_number, placeholder: "Phone" %>
+                      <%= f.input :message, placeholder: "Message", class: 'col-md-6' %>
+                      <%= f.submit 'Send', class: 'btn-primary col-md-2' %>
+                      <% end %>
+                      </div>
+                    </form>
+              </div>
+            </div>
+    </div>
+  </div>
+  <br />
+  
+  

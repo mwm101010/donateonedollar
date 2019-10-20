@@ -1,0 +1,19 @@
+<h1>Donate Now</h1>
+<br />
+<%= simple_form_for @donates do |f| %>
+<%= f.input :campaign_title %>
+<%= f.input :donation_amount %>
+<%= f.input :full_name %>
+<%= f.input :email %>
+<%= f.input :phone_number %>
+
+<%= form_tag donates_path do %>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount="500"
+                  data-locale="auto"></script>
+        <% end %>
+<% end %>
+

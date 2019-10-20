@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
@@ -29,7 +30,7 @@
               <%= link_to 'Gallery','#', class: 'nav-link' %> 
             </li>
             <li class="nav-item">
-              <%= link_to 'Donate Now','#', class: 'nav-link' %> 
+              <%= link_to 'Donate Now', new_donate_path, class: 'nav-link' %> 
             </li>
             <li class="nav-item">
               <%= link_to 'Our Campaigns','#', class: 'nav-link' %> 
@@ -45,5 +46,6 @@
       </nav>
 
     <%= yield %>
+     
   </body>
 </html>
