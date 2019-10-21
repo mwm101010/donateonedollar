@@ -53,3 +53,8 @@ h1, h2, h3, h4, h5, h6, .navbar {
 .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
   max-height: 550px;
 }
+
+.carousel-inner > .carousel-item > img, .carousel-inner > .carousel-itm > a > img {
+  height: 550px;
+  width: 100%;
+}
