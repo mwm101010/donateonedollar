@@ -25,4 +25,11 @@ RSpec.describe CampaignsController, type: :controller do
     end
   end
 
+  describe "campaigns#show action" do
+    it "should successfully load the show page" do
+      get :show
+      expect(response).to have_http_status(:success)
+    end
+  end
+
 end

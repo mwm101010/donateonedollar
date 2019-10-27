@@ -13,6 +13,10 @@ class CampaignsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @campaigns = Campaign.find(params[:id])
+  end
+
   private
 
   def campaign_params

@@ -1,19 +1,28 @@
+<div class="booyah-box">
 <h1>Donate Now</h1>
 <br />
 <%= simple_form_for @donates do |f| %>
-<%= f.input :campaign_title %>
-<%= f.input :donation_amount %>
-<%= f.input :full_name %>
-<%= f.input :email %>
-<%= f.input :phone_number %>
+<%= f.input :campaign do %>
+  <%= f.select :campaign_title, Campaign.all.map { |r| [r.title]}, include_blank: true %>
+<% end %>
+<div class="box1">
+<%= f.input :donation_amount,as: :radio_buttons, collection: [['$1', '1']], selected: 1%>
+</div> <br />
 
+
+<%= f.input_field :full_name, placeholder: "Full Name" %>
 <%= form_tag donates_path do %>
+
+          <script>
+            var data-amount
+          </script>
 
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                   data-description="A month's subscription"
-                  data-amount="500"
+                  data-amount=500
                   data-locale="auto"></script>
         <% end %>
 <% end %>
+</div>
 

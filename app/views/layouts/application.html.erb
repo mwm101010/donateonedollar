@@ -39,13 +39,62 @@
               <%= link_to 'Contact Us',  new_contact_path, class: 'nav-link' %> 
             </li>
             <li class="nav-item float-right">
-              <%= link_to 'New','#', class: 'nav-link float-right '  %> 
+              <%= link_to 'New', new_campaign_path, class: 'nav-link float-right '  %> 
             </li>
           </ul>
         </div>
       </nav>
 
     <%= yield %>
+
+    <div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-3">
+        <b>DonateOneDollar</b>
+        
+        <p> 6060 Village Bend Dr, Dallas Tx-75206'</p>
+    
+        <p> +19366689805</p>
+       
+        <p> info@donateonedollar.com</p>
+      </div>
+      <div class="col-12 col-sm-3">
+        <b>Footer Menu</b>
+        <br />
+        <%= link_to 'Who We Are', '#' %>
+        <br />
+        <%= link_to 'Gallery', '#' %>
+        <br />
+        <%= link_to 'Our Campaigns', '#' %>
+        <br />
+        <%= link_to 'Contact Us', '#' %>
+      </div>
+      <div class="col-12 col-sm-3">
+        <b>Contact</b>
+        <br />
+        mamw.muthu@gmail.com
+        <br />
+        Dallas TX, 75206
+      </div>
+      <div class="col-12 col-sm-3 social">
+        <b>Social</b>
+        <br />
+        <br />
+        <%= link_to 'http://github.com/herangakr' do %>
+        <span class="fa fa-github-square fa-2x social-button"></span>
+        <% end %>
+        <%= link_to 'https://www.facebook.com/TwistWithATastefans' do %>
+        <span class="fa fa-facebook-square fa-2x social-button"></span>
+        <% end %>
+        <%= link_to 'https://www.youtube.com/c/TwistWithATaste' do %>
+        <span class="fa fa-youtube-square fa-2x social-button"></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
      
   </body>
 </html>
