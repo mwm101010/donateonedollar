@@ -1,15 +1,25 @@
-<div class="booyah-box">
-<h1>Donate Now</h1>
+
+<div class="top-box">
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="frosty col-10 offset-1 text-center">
+    <h1>Donate Now</h1>
+  </div>
+</div>
 <br />
+<div class="booyah-box">
 <%= simple_form_for @donates do |f| %>
 <%= f.input :campaign do %>
   <%= f.select :campaign_title, Campaign.all.map { |r| [r.title]}, include_blank: true %>
 <% end %>
 <div class="box1">
 <%= f.input :donation_amount,as: :radio_buttons, collection: [['$1', '1']], selected: 1%>
-</div> <br />
-
-
+</div> 
+<br />
 <%= f.input_field :full_name, placeholder: "Full Name" %>
 <%= form_tag donates_path do %>
 
