@@ -18,4 +18,8 @@
 //= require popper
 //= require tether
 //= require bootstrap-sprockets
+//= require paloma
+//= require initializer
+//= require gal/gal
+
 //= require_tree .

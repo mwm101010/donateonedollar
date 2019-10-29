@@ -14,7 +14,7 @@ class CampaignsController < ApplicationController
   end
 
   def show
-    @campaigns = Campaign.find(params[:id])
+    @campaign = Campaign.find(params[:id])
   end
 
   private

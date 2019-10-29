@@ -63,6 +63,10 @@ gem "geocoder"
 gem "figaro"
 gem 'stripe'
 gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
+gem 'font-awesome-rails'
+gem "fog-aws"
+gem "mini_magick"
+gem 'paloma'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   resources :donates, only: [:new, :create]
   resources :pages, only: :index
+  resources :galleries, only: :index
 end

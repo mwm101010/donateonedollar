@@ -7,7 +7,7 @@ class DonatesController < ApplicationController
   def create
 
     # Amount in cents
-    @amount = 500
+    @amount = 100
 
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
@@ -26,9 +26,6 @@ class DonatesController < ApplicationController
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to root_path
-    
-
-
   end
 
   private
