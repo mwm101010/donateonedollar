@@ -6,6 +6,11 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.create(contact_params)
+    if @contact.valid?
+    redirect_to  new_contact_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private

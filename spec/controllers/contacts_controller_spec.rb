@@ -15,5 +15,12 @@ RSpec.describe ContactsController, type: :controller do
       contact = Contact.last
       expect(contact.name).to eq("Mahesha")
     end
+
+    it "should properly deal with validation errors" do
+      contact_count = Contact.count
+      post :create, params: {contacts: {name: '', email: '', phone_number: '', message: ''}} 
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(contact_count).to eq Contact.count
+    end
   end
 end

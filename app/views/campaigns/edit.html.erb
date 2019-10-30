@@ -1,0 +1,13 @@
+<div class="booyah-box">
+    <h1>New Campaign</h1>
+    <%= simple_form_for @campaign do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description_short %>
+      <%= f.input :description_full %>
+      <%= f.input :goal %>
+      <%= f.input :raised %> 
+      <%= f.input :picture %>
+      <%= f.submit "Save", class: 'btn btn-success' %>
+      <%= link_to 'Close', root_path, class: 'btn btn-danger'%>
+    <% end %>
+</div>

@@ -12,7 +12,7 @@
 </div>
 <br />
 <div class="booyah-box">
-<%= simple_form_for @donates do |f| %>
+<%= simple_form_for @donate do |f| %>
 <%= f.input :campaign, placeholder: "Campaign", label: false do %>
   <%= f.select :campaign_title, Campaign.all.map { |r| [r.title]}, include_blank: true %>
 <% end %>

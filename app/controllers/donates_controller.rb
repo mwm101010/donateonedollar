@@ -1,7 +1,7 @@
 class DonatesController < ApplicationController
 
   def new
-    @donates = Donate.new
+    @donate = Donate.new
   end
 
   def create
@@ -21,12 +21,13 @@ class DonatesController < ApplicationController
       currency: 'usd'
     )
 
-  @donates = Donate.create(donate_params)
-  redirect_to root_path
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
+    @donate = Donate.create(donate_params)
     redirect_to root_path
-  end
+    render :new, status: :unprocessable_entity
+    rescue Stripe::CardError => e
+    flash[:error] = e.message
+    end
+  
 
   private
 
