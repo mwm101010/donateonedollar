@@ -6,10 +6,6 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.create(contact_params)
-    if @contact.invalid?
-    flash[:error] = 'Could not save! Data is invalid.'
-    end
-    redirect_to root_path
   end
 
   private

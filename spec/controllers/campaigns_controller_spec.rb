@@ -27,9 +27,14 @@ RSpec.describe CampaignsController, type: :controller do
 
   describe "campaigns#show action" do
     it "should successfully load the show page" do
-      get :show
+      campaign = FactoryBot.create(:campaign)
+      get :show, params: { title: campaign.title }
       expect(response).to have_http_status(:success)
     end
-  end
 
+    it "should return a 404 error if the campaign is not found" do
+      get :show, params: { title: 'money' }
+      expect(response).to have_http_status(:not_found)
+    end
+  end
 end
