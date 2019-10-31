@@ -79,4 +79,44 @@ RSpec.describe CampaignsController, type: :controller do
     end
   end
 
+  describe "campaigns#update action" do
+    it "should allow users to successfully update campaigns" do
+      campaign = FactoryBot.create(:campaign, title: "Need food")
+      patch :update, params: { id: campaign.id, campaign: { title: 'No food needed', description_short: 'can you do it', description_full: 'There are so many in the world who just eat one meal per day', goal: '10000', raised: '2413' } }
+      expect(response).to redirect_to root_path
+      campaign.reload
+      expect(campaign.title).to eq "No food needed"
+    end
+
+    it "should have http 404 error if the campaign cannot be found" do
+      patch :update, params: { id: "hoo", campaign: { title: 'No food needed', description_short: 'can you do it', description_full: 'There are so many in the world who just eat one meal per day', goal: '10000', raised: '2413' } }
+      expect(response).to have_http_status(:not_found)
+    end
+
+    it "should render the edit form with an http status of unprocessable_entity" do
+      campaign = FactoryBot.create(:campaign, title: "Need food")
+      patch :update, params: { id: campaign.id, campaign: { title: '', description_short: '', description_full: '', goal: '', raised: '' } }
+      expect(response).to have_http_status(:unprocessable_entity)
+      campaign.reload
+      expect(campaign.title).to eq "Need food"
+
+    end
+  end
+
+  describe "campaigns#destroy action" do
+    it "should allow a user to destroy campaign" do
+      campaign = FactoryBot.create(:campaign)
+      delete :destroy, params: { id: campaign.id }
+      expect(response).to redirect_to root_path
+
+      campaign = Campaign.find_by_id(campaign.id)
+      expect(campaign).to eq nil
+    end
+
+    it "should return a 404 message if we cannot find a campaign with the id that is specified" do
+      delete :destroy, params: { id: 'hoo' }
+      expect(response).to have_http_status(:not_found)
+    end
+  end
+
 end

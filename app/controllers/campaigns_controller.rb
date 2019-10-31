@@ -28,6 +28,27 @@ class CampaignsController < ApplicationController
      return render_not_found if @campaign.blank?
   end
 
+  def update
+    @campaign = Campaign.find_by_id(params[:id])
+    return render_not_found if @Campaign.blank?
+
+    @campaign.update_attributes(campaign_params)
+
+    if @campaign.valid?
+      redirect_to root_path
+    else
+      return render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @campaign = Campaign.find_by_id(params[:id])
+    return render_not_found if @campaign.blank?
+    
+    @campaign.destroy
+    redirect_to root_path
+  end
+
   private
 
   def campaign_params

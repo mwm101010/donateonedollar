@@ -55,6 +55,7 @@
     </div>
      <%= link_to 'Learn more..', campaign_path(campaign), class: 'btn btn-info float-right' %>
      <%= link_to 'Edit', edit_campaign_path(campaign), class: 'btn btn-danger float-right' %>
+     <%= link_to 'Destroy', campaign_path(campaign), class: 'btn btn-danger float-right',  method: :delete, data: {confirm: 'Are you sure?'} %>
      
   </div>
   <hr />
