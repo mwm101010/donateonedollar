@@ -16,8 +16,8 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <%= link_to 'DonateOneDollar','#', class: 'navbar-brand' %>
-
+      <%= link_to 'DonateOneDollar', root_path, class: 'navbar-brand' %>
+        <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-md-0">
             <li class="nav-item">
@@ -27,30 +27,41 @@
               <%= link_to 'Who Are We', pages_path, class: 'nav-link' %> 
             </li>
             <li class="nav-item">
-              <%= link_to 'Gallery',galleries_path, class: 'nav-link' %> 
+              <%= link_to 'Gallery', galleries_path, class: 'nav-link' %> 
             </li>
-            <li class="nav-item">
-              <%= link_to 'Donate Now', new_donate_path, class: 'nav-link' %> 
+            <li class="nav-item nav nav-pills nav-justified">
+              <%= link_to 'Donate Now', new_donate_path, class: 'nav-link active' %> 
             </li>
             <li class="nav-item">
               <%= link_to 'Our Campaigns','#', class: 'nav-link' %> 
             </li>
             <li class="nav-item">
-              <%= link_to 'Contact Us',  new_contact_path, class: 'nav-link' %> 
+              <%= link_to 'Contact Us', new_contact_path, class: 'nav-link' %> 
             </li>
-            <li class="nav-item float-right">
+            <% if user_signed_in? %>
+            <li class="nav-item">
               <%= link_to 'New', new_campaign_path, class: 'nav-link float-right '  %> 
             </li>
+            <% end %>
+          </ul>
+          <ul class="navbar-nav">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Sign up!', new_user_registration_path, class: 'nav-link' %>
+              </li>
+            <% end %>
           </ul>
         </div>
+      </div>
       </nav>
-        <% if current_user %>
-          You're signed in as <%= current_user.email %>.
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "Sign In", new_user_session_path %>
-          <%= link_to "Sign Up", new_user_registration_path %>
-        <% end %>
+      
         <% if notice.present? %>
           <p class="notice"><%= notice %></p>
         <% end %>
@@ -77,13 +88,13 @@
       <div class="col-12 col-sm-3">
         <b>Footer Menu</b>
         <br />
-        <%= link_to 'Who We Are', '#' %>
+        <%= link_to 'Who We Are', pages_path %>
         <br />
-        <%= link_to 'Gallery', '#' %>
+        <%= link_to 'Gallery', galleries_path %>
         <br />
-        <%= link_to 'Our Campaigns', '#' %>
+        <%= link_to 'Our Campaigns', root_path %>
         <br />
-        <%= link_to 'Contact Us', '#' %>
+        <%= link_to 'Contact Us', new_contact_path %>
       </div>
       <div class="col-12 col-sm-3">
         <b>Contact</b>
