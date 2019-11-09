@@ -33,9 +33,6 @@
               <%= link_to 'Donate Now', new_donate_path, class: 'nav-link active' %> 
             </li>
             <li class="nav-item">
-              <%= link_to 'Our Campaigns','#', class: 'nav-link' %> 
-            </li>
-            <li class="nav-item">
               <%= link_to 'Contact Us', new_contact_path, class: 'nav-link' %> 
             </li>
             <% if user_signed_in? %>
@@ -44,6 +41,7 @@
             </li>
             <% end %>
           </ul>
+          <div class="float-right">
           <ul class="navbar-nav">
             <% if user_signed_in? %>
               <li class="nav-item">
@@ -59,6 +57,7 @@
             <% end %>
           </ul>
         </div>
+      </div>
       </div>
       </nav>
       

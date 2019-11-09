@@ -30,8 +30,7 @@ class CampaignsController < ApplicationController
 
   def update
     @campaign = Campaign.find_by_id(params[:id])
-    return render_not_found if @Campaign.blank?
-
+  
     @campaign.update_attributes(campaign_params)
 
     if @campaign.valid?
