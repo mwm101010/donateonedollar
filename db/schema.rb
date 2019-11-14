@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_152133) do
+ActiveRecord::Schema.define(version: 2019_11_14_002709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "campaign", force: :cascade do |t|
+  create_table "campaigns", force: :cascade do |t|
     t.string "title"
     t.text "description_short"
     t.text "description_full"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_10_30_152133) do
     t.decimal "raised"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -35,11 +36,13 @@ ActiveRecord::Schema.define(version: 2019_10_30_152133) do
   end
 
   create_table "donates", force: :cascade do |t|
+    t.integer "campaign_id"
     t.string "campaign_title"
     t.decimal "donation_amount"
     t.string "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_donates_on_campaign_id"
   end
 
   create_table "users", force: :cascade do |t|
