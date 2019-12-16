@@ -9,40 +9,41 @@
     <h1>Gallery</h1>
   </div>
 </div>
-<div class="booyah-box">
+<br />
+<br />
+
 <div class="container">
 
   <!-- Full-width images with number text -->
   <div class="mySlides">
     <div class="numbertext">1 / 6</div>
-      <img src="gal1.jpg" style="width:100%">
+     <%= image_tag 'side1.jpg', class: 'my-slider' %>
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 6</div>
-      <img src="gal2.jpg" style="width:100%">
+      <%= image_tag 'side2.jpg', class: 'my-slider' %>
   </div>
 
   <div class="mySlides">
     <div class="numbertext">3 / 6</div>
-      <img src="gal3.jpg" style="width:100%">
+      <%= image_tag 'side3.jpg', class: 'my-slider' %>
   </div>
 
   <div class="mySlides">
     <div class="numbertext">4 / 6</div>
-      <img src="gal4.jpg" style="width:100%">
+      <%= image_tag 'side4.jpg', class: 'my-slider' %>
   </div>
-
   <div class="mySlides">
-    <div class="numbertext">5 / 6</div>
-      <img src="gal5.jpg" style="width:100%">
+    <div class="numbertext">4 / 6</div>
+      <%= image_tag 'side5.jpg', class: 'my-slider' %>
   </div>
-
   <div class="mySlides">
-    <div class="numbertext">6 / 6</div>
-      <img src="gal6.jpg" style="width:100%">
+    <div class="numbertext">4 / 6</div>
+      <%= image_tag 'side6.jpg', class: 'my-slider' %>
   </div>
 
+  
   <!-- Next and previous buttons -->
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -55,23 +56,23 @@
   <!-- Thumbnail images -->
   <div class="row">
     <div class="column">
-      <img class="demo cursor" src="gal1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      <%= image_tag 'side1.jpg', class: 'demo cursor my-slider', :onclick => 'currentSlide(1)', alt: 'No Hope' %>
     </div>
     <div class="column">
-      <img class="demo cursor" src="gal2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+       <%= image_tag 'side2.jpg', class: 'demo cursor my-slider', :onclick => 'currentSlide(2)', alt: 'No Food' %>
     </div>
     <div class="column">
-      <img class="demo cursor" src="gal3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+      <%= image_tag 'side3.jpg', class: 'demo cursor my-slider', :onclick => 'currentSlide(1)', alt: 'No Care' %>
     </div>
     <div class="column">
-      <img class="demo cursor" src="gal4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+       <%= image_tag 'side4.jpg', class: 'demo cursor my-slider', :onclick => 'currentSlide(1)', alt: 'No Hopes' %>
     </div>
     <div class="column">
-      <img class="demo cursor" src="gal5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+       <%= image_tag 'side5.jpg', class: 'demo cursor my-slider', :onclick => 'currentSlide(1)', alt: 'Life' %>
     </div>
     <div class="column">
-      <img class="demo cursor" src="gal6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+       <%= image_tag 'side6.jpg', class: 'demo cursor my-slider', :onclick => 'currentSlide(1)', alt: 'Community' %>
     </div>
+ 
   </div>
-</div>
 </div>
